@@ -18,13 +18,12 @@ Full Paper: [3d Human Pose Estimation from 2d Keypoints](https://github.com/rlud
 
 ## Using
 
-###Training and Testing
+### Training
 Run `prep_data.py`
 Run `train.py`. A datetime is appended to these files. To use these in the subsequent step, archive the existing files and remove the datetime suffix of your new files.
 
-###Testing Only
-Run `prep_data.py`, commenting out
-`train.py`
+### Testing
+Test results can be seen in model_analysis.ipynb. This notebook is not formatted with the intent of presenting the data (the [research paper](https://github.com/rludlow/3d-pose-2d-keypoints/blob/present/Ludlow_3d_pose_2d_keypoints.pdf) is), but the results can be seen there.
 
 ## Reference
 
