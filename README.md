@@ -12,7 +12,6 @@ I pursue three key interventions to improve performance: a) modify the data norm
 - [Tensorflow 1.1](https://www.tensorflow.org/)
 - [Keras 2.1.5](https://keras.io/)  
 
-
 ## Training
 
 `prep_data.py`
@@ -27,3 +26,11 @@ I pursue three key interventions to improve performance: a) modify the data norm
   month = {November},
   year = {2017}
   }
+
+	@InProceedings{Tome_2017_CVPR,
+	author = {Tome, Denis and Russell, Chris and Agapito, Lourdes},
+	title = {Lifting From the Deep: Convolutional 3D Pose Estimation From a Single Image},
+	booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	month = {July},
+	year = {2017}
+	}
