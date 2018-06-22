@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
 import datetime
-from preprocessing import *
+import preprocessing as pre
 
 # Get starting time
 start = datetime.datetime.now()
@@ -15,17 +15,17 @@ def prep_data(subject_num, train=False, duplicates=720, norm_mode='frame', disto
     bvh_logs = pickle.load( open( blender_file, "rb" ) )
 
     # Merge the arrays from each each action sequence per CMU subject into one numpy array
-    merged = merge_arrays(bvh_logs, rows=15)
+    merged = pre.merge_arrays(bvh_logs, rows=15)
     print("merged", merged.shape)
     merged = merged[:,0:15,:]
 
     # Normalize the data to eliminate effects of translation and scale
-    normalized = normalize_data(merged, norm_mode)
+    normalized = pre.normalize_data(merged, norm_mode)
     print("normalized", normalized.shape)
 
     # Augment data set with synthetic rotations if prepping for training
     if train == True:
-        augmented = augment_rotations(normalized, duplicates)
+        augmented = pre.augment_rotations(normalized, duplicates)
         final = augmented
         print("augmented", augmented.shape)
         train_test = 'train'
