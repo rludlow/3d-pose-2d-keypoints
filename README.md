@@ -9,8 +9,9 @@ I pursue three key interventions to improve performance: a) modify the data norm
 ![Before After](https://github.com/rludlow/3d-pose-2d-keypoints/blob/present/utils/pose_before_after_colors.png)
 
 ## Dependencies
-- [Tensorflow 1.1] (https://www.tensorflow.org/)
-- [Keras 2.1.5] (https://keras.io/)  
+- [Tensorflow 1.1](https://www.tensorflow.org/)
+- [Keras 2.1.5](https://keras.io/)  
+
 
 ## Training
 
