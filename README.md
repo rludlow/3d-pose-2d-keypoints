@@ -19,7 +19,7 @@ I pursue three key interventions to improve performance: a) modify the data norm
 
 ## Reference
 
-	  @InProceedings{Tome_2017_CVPR,
+	  @InProceedings{Zhao_2017,
 	  author = {Ruiqi Zhao, Yan Wang, and Aleix M Martines},
 	  title = {A Simple, Fast, and Highly-Accurate Algorithm to Recover 3D Shape from 2D Landmarks on a Single Image},
 	  booktitle = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
@@ -27,10 +27,3 @@ I pursue three key interventions to improve performance: a) modify the data norm
 	  year = {2017}
 	  }
 
-	@InProceedings{Tome_2017_CVPR,
-	author = {Tome, Denis and Russell, Chris and Agapito, Lourdes},
-	title = {Lifting From the Deep: Convolutional 3D Pose Estimation From a Single Image},
-	booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-	month = {July},
-	year = {2017}
-	}
