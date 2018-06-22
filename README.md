@@ -14,16 +14,37 @@ Full Paper: [3d Human Pose Estimation from 2d Keypoints](https://github.com/rlud
 
 ## Dependencies
 - [Tensorflow 1.1](https://www.tensorflow.org/)
-- [Keras 2.1.5](https://keras.io/)  
+- [Keras 2.1.5](https://keras.io/)
+- Only for prepping data from scratch: [Blender](https://www.blender.org/)
 
-## Using
+## Training and Testing
 
 ### Training
-Run `prep_data.py`
-Run `train.py`. A datetime is appended to these files. To use these in the subsequent step, archive the existing files and remove the datetime suffix of your new files.
+- Run `prep_data.py`
+- Run `train.py`. A datetime is appended to these files. To use these in the subsequent step, archive the existing files and remove the datetime suffix of your new files.
 
 ### Testing
 Test results can be seen in model_analysis.ipynb. This notebook is not formatted with the intent of presenting the data (the [research paper](https://github.com/rludlow/3d-pose-2d-keypoints/blob/present/Ludlow_3d_pose_2d_keypoints.pdf) is), but the results can be seen there.
+
+## Prepping Data from Scratch
+
+In the section above, the data has already been downloaded and converted into 3d coordinates. If you want to start from scratch and convert the data from bvh files to 3d coordinates, you can proceed as follows with Blender installed:
+
+- Download bvh files (main site: https://sites.google.com/a/cgspeed.com/cgspeed/motion-capture/cmu-bvh-conversion)
+	- Download locations:
+        http://www.mediafire.com/?z6pr5bk3h1o5045
+        http://www.mediafire.com/?cu0a99w1day8hnr
+        http://www.mediafire.com/?r6y8sc60mabhneu
+
+- Unzip and move folders 13, 14, 15, and 86 to directory 'logs/cmu_files/raw/'
+
+- Run standardize_bvh.py to apply consistent header to each file and keep only one in every ten frames. (saved as .bvh in cmu_files/standardized/)
+
+- Run the following to save the 3d coordinates for each frame of each corresponding animation. Blender runs the animations defined in the bvh files in the background to determine the 3d coordinates to save:
+    - blender --background --python blender/save_blender_3d_points.py #Original training and testing data
+    - blender --background --python blender/save_blender_mirrored.py #Bilateral mirror of Subject 86 for augmentation
+    - blender logs/blender_animations/seated_animation.blend --background --python save_seated.py #Animation of seated poses for augmentation
+    (saved as pickle dictionary in logs/blender_dicts/)
 
 ## Reference
 
