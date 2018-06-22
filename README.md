@@ -30,11 +30,11 @@ Test results can be seen in `model_analysis.ipynb`. This notebook is not formatt
 
 In the section above, the data has already been downloaded and converted into 3d coordinates. If you want to start from scratch and convert the data from bvh files to 3d coordinates, you can proceed as follows with Blender installed:
 
-- Download bvh files ([main site](https://sites.google.com/a/cgspeed.com/cgspeed/motion-capture/cmu-bvh-conversion))
-	- Download locations:
-        [1](http://www.mediafire.com/?z6pr5bk3h1o5045),
-        [2](http://www.mediafire.com/?cu0a99w1day8hnr),
-        [3](http://www.mediafire.com/?r6y8sc60mabhneu)
+- The program uses CMU Motion Capture Subjects 86 for training and 13-15 for testing. Download the following groups of bvh files:       [Subjects 10-14](http://www.mediafire.com/?z6pr5bk3h1o5045),
+			[Subjects 15-19](http://www.mediafire.com/?cu0a99w1day8hnr),
+			[Subjects 86-94](http://www.mediafire.com/?r6y8sc60mabhneu). ([main site](https://sites.google.com/a/cgspeed.com/cgspeed/motion-capture/cmu-bvh-conversion))
+
+
 
 - Unzip and move folders 13, 14, 15, and 86 to directory `logs/cmu_files/raw/`
 
