@@ -17,3 +17,13 @@ I pursue three key interventions to improve performance: a) modify the data norm
 
 `prep_data.py`
 `train.py`
+
+## Reference
+
+  @InProceedings{Tome_2017_CVPR,
+  author = {Ruiqi Zhao, Yan Wang, and Aleix M Martines},
+  title = {A Simple, Fast, and Highly-Accurate Algorithm to Recover 3D Shape from 2D Landmarks on a Single Image},
+  booktitle = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  month = {November},
+  year = {2017}
+  }
