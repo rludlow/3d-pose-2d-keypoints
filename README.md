@@ -1,5 +1,7 @@
 # 3d Human Pose Estimation from 2d Keypoints
 
+Full Paper (pdf): [3d Human Pose Estimation from 2d Keypoints](https://github.com/rludlow/3d-pose-2d-keypoints/blob/present/Ludlow_3d_pose_2d_keypoints.pdf)
+
 ## Overview
 
 While humans can generally estimate with ease the 3d pose of a human in a 2d image, 3d pose estimation remains a challenging problem for machines. This project improves an algorithm that estimates 3d keypoints of human poses with 2d keypoints as the only input.
@@ -26,4 +28,3 @@ I pursue three key interventions to improve performance: a) modify the data norm
 	  month = {November},
 	  year = {2017}
 	  }
-
