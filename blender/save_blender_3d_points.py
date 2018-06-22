@@ -85,7 +85,7 @@ if __name__ == "__main__":
             bpy.ops.object.delete()
 
         # Save
-        SAVE_PATH = 'logs/blender_dicts/'
+        SAVE_PATH = '../logs/blender_dicts/'
         LOG_FILE = 'Subject{}.p'.format(subject)
         CSV_LOG_PATH = SAVE_PATH + LOG_FILE
 

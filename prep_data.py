@@ -28,10 +28,6 @@ def prep_data(subject_num, train=False, duplicates=720, norm_mode='frame', disto
         augmented = augment_rotations(normalized, duplicates)
         final = augmented
         print("augmented", augmented.shape)
-        if distort == True:
-            # Distort x,y coordinates by Gaussian
-            distorted = distort_x_y(augmented)
-            final = distorted
         train_test = 'train'
 
     else:
@@ -52,9 +48,9 @@ if __name__ == "__main__":
         prep_data(subject, train=False, norm_mode='sequence')
 
     # Original training sets
-    prep_data('86', train=True, duplicates=720, norm_mode='frame', distort=True)
-    prep_data('86', train=True, duplicates=720, norm_mode='sequence', distort=True)
+    prep_data('86', train=True, duplicates=720, norm_mode='frame')
+    prep_data('86', train=True, duplicates=720, norm_mode='sequence')
 
     # Augmented Training sets
-    prep_data('86-seated', train=True, duplicates=720, norm_mode='sequence', distort=True)
-    prep_data('86-mirror', train=True, duplicates=720, norm_mode='sequence', distort=True)
+    prep_data('86-seated', train=True, duplicates=720, norm_mode='sequence')
+    prep_data('86-mirror', train=True, duplicates=720, norm_mode='sequence')

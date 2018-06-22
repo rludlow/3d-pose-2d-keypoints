@@ -25,9 +25,9 @@ A. Download Source Data and Process in Blender
   3. Run standardize_bvh.py to apply consistent header to each file and keep only one in every ten frames. (saved as .bvh in cmu_files/standardized/)
 
   4. Run the following to save the 3d coordinates for each frame of each corresponding animation. Blender runs the animations defined in the bvh files in the background to determine the 3d coordinates to save:
-    blender --background --python save_blender_3d_points.py #Original training and testing data
-    blender --background --python save_blender_mirrored.py #Bilateral mirror of Subject 86 for augmentation
-    blender logs/seated_animation.blend --background --python save_seated.py #Animation of seated poses for augmentation
+    blender --background --python blender/save_blender_3d_points.py #Original training and testing data
+    blender --background --python blender/save_blender_mirrored.py #Bilateral mirror of Subject 86 for augmentation
+    blender logs/blender_animations/seated_animation.blend --background --python save_seated.py #Animation of seated poses for augmentation
     (saved as pickle dictionary in logs/blender_dicts/)
     Note: A datetime is appended to these files. To use these in the subsequent step, archive the existing files and remove the datetime suffix.
 
