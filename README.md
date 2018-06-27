@@ -1,12 +1,12 @@
 # 3d Human Pose Estimation from 2d Keypoints
 
-
-
 ## Overview
 
 While humans can generally estimate with ease the 3d pose of a human in a 2d image, 3d pose estimation remains a challenging problem for machines. This project improves an algorithm that estimates 3d keypoints of human poses with 2d keypoints as the only input.
 
-I pursue three key interventions to improve performance: a) modify the data normalization technique in preprocessing, b) modify the neural network architecture from a simple densely connected network to a multi-stage network modeled after state-of-the-art 2d pose estimation models, and c) generate synthetic data to augment training sets.
+I pursue three key interventions to improve reconstruction acurracy over the entire dataset as well as a subset of poses with particularly high error in the benchmark model: a) modify the data normalization technique in preprocessing, b) modify the neural network architecture from a simple densely connected network to a multi-stage network modeled after state-of-the-art 2d pose estimation models, and c) generate synthetic data to augment training sets.
+
+The interventions successfully reduced reconstruction error over the entire testing set (from Carnegie Mellon's Motion Capture Database) by 40%, and that of targetted high-error poses by 87%.
 
 Full Paper: [3d Human Pose Estimation from 2d Keypoints](https://github.com/rludlow/3d-pose-2d-keypoints/blob/present/Ludlow_3d_pose_2d_keypoints.pdf) (pdf)
 
