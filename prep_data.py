@@ -9,7 +9,7 @@ time = start.strftime("%d-%H-%M")
 
 
 def prep_data(subject_num, train=False, duplicates=720, norm_mode='frame', distort=False):
-
+    """ Accepts dictionary of file names (keys) and 3d coordinates (values) then performs all preprocessing to output a numpy array ready for training or testing."""
     # Load dictionary of 3d coordinates of action sequences exported from Blender
     blender_file = 'logs/blender_dicts/Subject{}.p'.format(subject_num)
     bvh_logs = pickle.load( open( blender_file, "rb" ) )
