@@ -1,4 +1,3 @@
-from matrix_transformations import *
 import numpy as np
 
 def normalize_data(data, mode):
@@ -84,7 +83,7 @@ def augment_rotations(data, duplicates=720):
         a += (a_range[1] - a_range[0]) / duplicates
         b += 1
         c += (c_range[1] - c_range[0]) / duplicates
-        R = rot_mat(a,b,c)
+        R = rotation_matrix(a,b,c)
         for j in range(data.shape[0]):
             variants[i][j] = R.dot(data[j].T).T
     full = variants.reshape((variants.shape[0] * variants.shape[1], variants.shape[2], variants.shape[3]))
@@ -115,8 +114,33 @@ def merge_arrays(dict, rows=15):
 
     return final
 
-def split_input_target(data):
-    X_data = data[:,:,0:2]
-    y_data = data[:,:,2]
+def rotation_matrix(a_degrees, b_degrees, c_degrees):
+    """
+    Accepts rotations about each axis in degrees, returns rotation matrix.
+    """
 
-    return X_data, y_data
+    a = np.radians(a_degrees)
+    b = np.radians(b_degrees)
+    c = np.radians(c_degrees)
+
+    X_mat = np.array([
+        [1,0,0],
+        [0,np.cos(a),-np.sin(a)],
+        [0,np.sin(a),np.cos(a)]
+        ])
+
+    Y_mat = np.array([
+        [np.cos(b),0, np.sin(b)],
+        [0,1,0],
+        [-np.sin(b),0,np.cos(b)],
+    ])
+
+    Z_mat = np.array([
+        [np.cos(c),-np.sin(c),0],
+        [np.sin(c),np.cos(c),0],
+        [0,0,1],
+    ])
+
+    XY = X_mat(a).dot(Y_mat(b))
+    XYZ = XY.dot(Z_mat(c))
+    return XYZ

@@ -56,7 +56,7 @@ for j in range(0,950):
             frame.append(part)
         bvh_dict[file].append(frame)
 
-SAVE_PATH = 'logs/blender_dicts/'
+SAVE_PATH = '../logs/blender_dicts/'
 LOG_FILE = 'Subject86-seated-short.p'
 CSV_LOG_PATH = SAVE_PATH + LOG_FILE
 
